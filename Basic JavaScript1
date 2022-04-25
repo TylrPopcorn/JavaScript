@@ -1,0 +1,30 @@
+// 4/25/22
+// Simply practice.
+
+var first = "Tylr";
+var last = "Popcorn";
+var Items = [
+    name = "Jack",
+    name2 = [type = "apple", Amount = 3],
+    name3 = [
+        type = "orange",
+        type2 = [
+            option = "Opened", 
+            turntable = true,
+            type3 = [
+                cake = true,
+                Flagship = false,
+            ]
+        ]
+    ]
+             
+]
+
+
+console.log(first, last);
+console.log(Items[0]);
+console.log(Items[1]);
+console.log(Items[1][1]);
+console.log(Items[2][1][0]);
+console.log(Items[2][1][2]);
+console.log(Items[2][1][2][1]);
