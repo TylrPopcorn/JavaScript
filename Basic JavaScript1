@@ -21,7 +21,7 @@ var Items = [
              
 ]
 
-
+//Print out items from above:
 console.log(first, last);
 console.log(Items[0]);
 console.log(Items[1]);
