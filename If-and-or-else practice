@@ -1,0 +1,47 @@
+// Practice.
+//4/27/22
+
+var colors = new Array('red', 'blue', 'green');
+        var selectedColor = colors[1];
+        var Mood = [
+            goodMood = true,
+            badMood = true,
+        ];
+
+        if (selectedColor === 'blue'){
+            console.log("the color is blue");
+        } else if (selectedColor == colors[0]) {
+            console.log("the color is red.");
+        } else if (selectedColor == colors[2]) {
+            console.log("the color is green.")
+        } else {
+            console.log("the color is unkown.")
+        }
+ 
+
+        switch(selectedColor){
+            case 'red': 
+                console.log("the color is red");
+                break;
+            case 'blue':
+                console.log("the color is blue.");
+                break;
+            case 'green':
+                console.log("the color is green.");
+                break;
+            default:
+                console.log('there was an error.');
+        }
+ 
+
+        if (Mood[0] == true && Mood[1] == true){
+            console.log("Neutral")
+        } else {
+            console.log("Not neutral.");
+        }
+
+        if (Mood[0] == false || Mood[1] == false){
+            console.log("Mood = false");
+        } else {
+            console.log("Mood = true");
+        }
