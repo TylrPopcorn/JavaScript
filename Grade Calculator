@@ -1,0 +1,36 @@
+//Grade Calculator
+/*
+Using the grade function below do the following: 
+1. Receive a score out of 100 
+2. Return the corresponding letter grade following this grade scale:
+
+ 90-100 should return 'you got an A' 
+ 80-89 should return 'you got a B'
+ 70-79 should return 'you got a C'
+ 60-69 should return 'you got a D'
+ below should return 'you got an F'
+*/
+
+function grade(numb){
+/*Your Code here */
+ let grades = ["A","B","C","D"];
+ let grades2 = grades;
+ grades["A"] = [90,91,92,93,94,95,96,97,98,99,100];
+ grades["B"] = [80,81,82,83,84,85,86,87,88,89];
+ grades["C"] = [70, 71, 72, 73, 74, 75, 76, 77, 78, 79];
+ grades["D"] = [60, 61, 62, 63, 64, 65, 66, 67, 68, 69];
+/*--------*/
+
+for (let i = 0; i<grades2.length; i++){
+
+  for (let i2 = 0; i2<grades[grades2[i]].length; i2++){
+    if (grades[grades2[i]][i2] == numb) {
+      return grades2[i]
+    }
+  }
+}
+
+return 'F'
+}
+
+console.log('you got a ' + grade(70));
