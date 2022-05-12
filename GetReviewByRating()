@@ -1,0 +1,38 @@
+//5/12/22
+//The purpose of this is to get a review based on what kind of rating you are wanting to look through/for.
+
+const reviews = [
+  { name: "Daniela", rating: 5, feedback: "Beautiful atmosphere and wonderful vegan options!" },
+  { name: "Jack", rating: 3, feedback: "A little too hipster for my taste, but the burger was decent, if overpriced" },
+  { name: "Miranda", rating: 4, feedback: "fun trivia and cool vibes" },
+  { name: "Wen", rating: 4.5, feedback: "I don't leave my house often, but when I do, it's for this place. Highly reccomend." },
+  { name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day." },
+  { name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." },
+  { name: "Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay." },
+  { name: "Reyna", rating: 3.5, feedback: "" },
+]
+
+ function getReviewByRating(array, rating) {
+    /* code here */
+    let rewievs = []; //Used to hold all of the reviews found.
+    let Acceptableratings = [Math.floor(rating)]; //Used to hold what numbers we are looking for.
+
+    let counter = 0 //Used to help determine how much to add to our numbers.
+    for (let i = 1; i<=9; i++){
+      counter = counter + 0.1
+      Acceptableratings[i] = Acceptableratings[0] + counter; //Add the new number to the array.
+    }
+
+    //Loop through the array given:
+    for (let i=0; i<array.length; i++){
+      if (array[i].rating != null) { //If a rating can be found then
+        if (array[i].rating >= Acceptableratings[0] && array[i].rating < Acceptableratings[Acceptableratings.length-1]){ //IF the rating fits into the category then
+          rewievs.push(array[i]); //Add it to the reviews array.
+        }
+      }
+    }
+
+   return rewievs; //Give back all of the information found.
+  }
+
+  console.log('stretch 1: ', getReviewByRating(reviews, 4.5)) //Invoke.
