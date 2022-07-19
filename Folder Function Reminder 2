@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {
 
     for (let i=0; i<outComes.length; i++){
    //  console.log(outComes[i])
-      if (outComes[i][0] == state){
+      if (outComes[i][0] == action){
         outComes[i][1]();
       }
     }
