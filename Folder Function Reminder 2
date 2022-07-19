@@ -1,0 +1,28 @@
+//Another way of writing functions
+
+
+
+const reducer = (state = initialState, action) => {
+    //(SWITCH STATEMENT):
+    let outComes = [
+     [
+       "Test", 
+       function () {
+            return console.log("tyyy")
+        }
+     ],
+      
+    ]
+
+    for (let i=0; i<outComes.length; i++){
+   //  console.log(outComes[i])
+      if (outComes[i][0] == state){
+        outComes[i][1]();
+      }
+    }
+
+
+    return state;
+}
+
+reducer("Test")
