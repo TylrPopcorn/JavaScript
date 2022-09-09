@@ -1,0 +1,28 @@
+function fibonacci(x, prev, curr){
+    //3 2 1 0
+    //0 1 1 2
+    
+    if (x>1){
+        if (curr == null){
+            curr = 1 //the current value
+            prev = 0 //the previous value
+        }
+        
+        let sum = curr + prev;
+        let newPrev = curr;
+        
+        return fibonacci((x-1), newPrev, sum)
+    } else if (x == 0){
+        return 0;
+    } else if (x == 1 && curr == null){
+        return 1;
+    }
+    
+    return curr;
+}
+
+
+
+function solution(n) {
+    return fibonacci(n)
+}
