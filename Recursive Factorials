@@ -1,0 +1,29 @@
+function multiply(x, sum) {
+    if (x > 0){
+      if (x-1>0){
+        
+        if (sum != null){
+          let kk = sum * (x-1)
+          console.log(kk, x, sum, x-1)
+          return multiply((x-1), kk)
+        } else {
+          let kk = x * (x - 1)
+          return multiply((x-1), kk)
+        }
+      } else {
+        if (sum == null){
+          return x;
+        }
+      }
+    }
+  
+  return sum;
+}
+
+
+function solution(x) {
+    return multiply(x)
+}
+
+console.log(solution(10))
+console.log(solution(1))
