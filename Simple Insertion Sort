@@ -1,0 +1,41 @@
+//A simple insertion sort method.
+
+function solution(a) {
+    let inOrder = false
+    
+    while (inOrder == false){
+        let arraySwapped = false
+        
+        for (let i = 0; i<a.length; i++){
+            if(a[i-1] != null){
+                
+                if (a[i] < a[i-1]){
+                    let tempVal = a[i-1];
+                    
+                    a[i-1] = a[i]
+                    a[i] = tempVal
+                    
+                    arraySwapped = true;
+                }
+            }
+        }
+        
+        if (arraySwapped === false){
+            inOrder = true;
+            break;
+        }
+    }
+    
+    return a;
+
+}
+
+/*
+
+Write an in-place Insertion Sort.
+
+Do NOT use a built-in sort routine.
+
+The result should be in ascending order.
+
+*/
