@@ -1,0 +1,81 @@
+/*
+You are given a list of XP points of all users, your task is to calculate how many users are there in each level and print them in decreasing order of those numbers. In case of a tie, higher level should appear first.
+
+Levels are defined in the following way:
+
+Recruit: 0 - 999 XP
+Soldier: 1000 - 4999 XP
+Warrior: 5000 - 9999 XP
+Captain: 10000 - 49999 XP
+Ninja: 50000+ XP
+
+Return a list of strings where each string would represent a level and number of users within that level, for example:
+
+Soldier - 15
+Recruit - 13
+Ninja - 1
+
+*/
+
+
+function solution(points) {
+    
+    let Template = [
+        ["Recruit", 0, 0, 999, 1],
+        ["Soldier", 0, 1000, 4999, 2],
+        ["Warrior", 0, 5000, 9999, 3],
+        ["Captain", 0, 10000, 49999, 4],
+        ["Ninja", 0, 50000, null, 5],
+    ]
+    
+   for (let i = 0; i<points.length; i++){
+       for (let x = 0; x<Template.length; x++){
+           if (points[i] >= Template[x][2] && points[i] <= Template[x][3]) {
+               Template[x][1] = Template[x][1] + 1
+           } else if (points[i] >= Template[x][2] && Template[x][3] == null){
+               Template[x][1] = Template[x][1] + 1
+           }
+       }
+   }
+   
+   let inOrder = false
+   while (inOrder == false){
+       let arraySwapped = false
+       
+       for (let i = 0; i<Template.length; i++){
+           if (Template[i-1] != null){
+               
+               if (Template[i][1] > Template[i-1][1]){
+
+                   let tempVal = Template[i-1]
+                   
+                   Template[i-1] = Template[i]
+                   Template[i] = tempVal
+                   arraySwapped = true
+               } else if (Template[i][1] == Template[i-1][1]){
+                   if (Template[i][4] > Template[i-1][4]){
+                       let tempVal = Template[i-1]
+                       Template[i-1] = Template[i]
+                       Template[i] = tempVal
+                       arraySwapped = true
+                   }
+               }
+           }
+       }
+       
+       if (arraySwapped == false){
+           inOrder = true;
+           break;
+       }
+   }
+    
+    let result = []
+    for (let i = 0; i<Template.length; i++){
+        if (Template[i][1]> 0){ 
+           result[i] = (Template[i][0].concat(" - ", Template[i][1]))
+        }
+    }
+
+    
+    return result;
+}
