@@ -1,0 +1,26 @@
+function basicOp(operation, value1, value2)
+{
+  // Code
+  const funcs = {
+    "+": function(){
+      return (value1 + value2)
+    },
+    
+    "-": function(){
+      return (value1 - value2)
+    },
+    
+    "*": function(){
+      return (value1 * value2)
+    },
+    
+    "/": function(){
+      return (value1/value2)
+    }
+  }
+  
+  return funcs[operation](value1,value2)
+}
+
+
+console.log(basicOp('+', 4, 7)) // <--- 11
